@@ -45,6 +45,19 @@ No data is saved in the database or transferred.
 
 == Changelog ==
 
+
+TODO: 
+
+- add white logo in customizer, fallback current logo system
+- check block variation quote and create one for buttons
+- test spacing fuild system like oll theme
+
+== 1.5.7 ==
+* add button outline hover style
+* improve woocommerce button style, table and tabs
+* fix css review woocommerce
+* Add fluid typography system font in theme.json
+
 == 1.5.6 ==
 * add template cotained no title and fix menu scroll in internal pages
 
