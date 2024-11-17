@@ -23,6 +23,10 @@ To create a button in quick link menu add "evi" css class to a menu element
 
 To activate the e-commerce simply install WooCommerce and follow the wizard process the cart will appear automatically.
 
+To creare a One page Scroll Structure add to the menu www.yoursite.com/#section-1 and the class .page-scroll to the menu element (the system will scroll with animation)
+
+To add parallax effect to the cover simply add "para" css class to the cover
+
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
@@ -47,10 +51,26 @@ No data is saved in the database or transferred.
 
 
 TODO: 
-
 - add white logo in customizer, fallback current logo system
 - check block variation quote and create one for buttons
-- test spacing fuild system like oll theme
+- test spacing fuild system like oll. theme
+
+== 1.6.0 ==
+* fix css wrapper
+
+== 1.5.9 ==
+* fix wrapper css
+
+== 1.5.8 ==
+* fix layout ont tablet and mobile
+* fix css text
+* fix name one page scroll class menu
+* add parallax scroll to cover with .para class
+* add icon email and Navigate
+* fix wrapper parallax bug
+* change search icon
+* fix size pages
+
 
 == 1.5.7 ==
 * add button outline hover style

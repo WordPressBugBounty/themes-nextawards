@@ -87,7 +87,7 @@ document.querySelectorAll('.scroll a[href^="#"]').forEach(elem => {
     });
 });
 
-// js one page scroll home
+// js one page scroll home (for Backwards compatibility)
 let root_url = document.location.href.match(/(^[^#]*)/)
 
 document.querySelectorAll('.home-scroll a[href^="'+root_url[0]+'#"]').forEach(elem => {
@@ -104,3 +104,40 @@ document.querySelectorAll('.home-scroll a[href^="'+root_url[0]+'#"]').forEach(el
       document.body.classList.remove('menu-open');
   });
 });
+
+// js one page scroll internal page (new class better semantic)
+let root_url_2 = document.location.href.match(/(^[^#]*)/)
+
+document.querySelectorAll('.page-scroll a[href^="'+root_url_2[0]+'#"]').forEach(elem => {
+  elem.addEventListener('click', e => {
+      e.preventDefault();
+      elem_id = elem.getAttribute('href').replace(root_url[0], "");
+      let block = document.querySelector(elem_id),
+          offset = elem.dataset.offset ? parseInt(elem.dataset.offset) : 0,
+          bodyOffset = document.body.getBoundingClientRect().top;
+      window.scrollTo({
+          top: block.getBoundingClientRect().top - bodyOffset + offset,
+          behavior: 'smooth'
+      }); 
+      document.body.classList.remove('menu-open');
+  });
+});
+
+
+// parallax cover
+// https://github.com/piersrueb/simpleparallax
+
+const simpleParallax = (elem, modifier) => {
+  let paras = [...document.querySelectorAll(elem)];
+  const sp = () => {
+    for (let i = 0; i < paras.length; i++) {
+      let x = paras[i].getBoundingClientRect().top / modifier;
+      let y = Math.round(x * 100) / 100;
+      paras[i].style.objectPosition = "0% " + y + "%";
+    }
+    requestAnimationFrame(sp);
+  };
+  requestAnimationFrame(sp);
+};
+
+simpleParallax(".parallax-cover .wp-block-cover__image-background", 20);

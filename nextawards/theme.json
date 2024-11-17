@@ -2,8 +2,8 @@
     "version": 2,
     "settings": {
         "layout": {
-            "contentSize": "720px",
-            "wideSize": "1200px"
+            "contentSize": "850px",
+            "wideSize": "1300px"
         },
         "appearanceTools": true, 
         "spacing": {
@@ -86,8 +86,7 @@
     },
     "styles": {
 		"typography": {
-			"fontSize": "var(--wp--preset--font-size--extra-small)",
-			"fontFamily": "var(--wp--preset--font-family--system-fonts)",
+			"fontSize": "var(--wp--preset--font-size--small)",
 			"lineHeight": "1.2"
 		},
         "elements": {
