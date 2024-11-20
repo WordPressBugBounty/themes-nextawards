@@ -1,5 +1,5 @@
 <?php 
-/* Typography Section */
+	/* Typography Section */
 	$wp_customize->add_section( 'nextawards_typography' , array(
     'title'      => __( 'Typography', 'nextawards' ),
     'priority'   => 30,
@@ -204,6 +204,20 @@
         'settings'   => 'nextawards_topbar_text',
         'type'   => 'text'			
     )) );
+	
+	/* Add setting for logo white uploader */
+	$wp_customize->add_setting( 'logo_white' , array(
+	'default'   => '',
+	'transport' => 'refresh',
+		'sanitize_callback' => 'nextawards_sanitize_callback_function',
+	)); 
+         
+    /* Add control for logo uploader (actual uploader)*/
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_white', array(
+        'label'    => __( 'Logo White Version', 'nextawards' ),
+        'section'  => 'title_tagline',
+        'settings' => 'logo_white',
+    ) ) );
 
 
 

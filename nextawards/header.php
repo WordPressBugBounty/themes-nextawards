@@ -40,10 +40,29 @@
         <?php 
         $nextawards_logo_id = get_theme_mod( 'custom_logo' );
         $nextawards_logo = wp_get_attachment_image_src( $nextawards_logo_id , 'full' );
-        if ( has_custom_logo() ) { ?>
 
-          <a class="header__logo" href="<?php echo esc_url(home_url()); ?>"><img class="header__logo-img" src="<?php echo esc_url( $nextawards_logo[0] ); ?>" alt="<?php echo esc_url( get_bloginfo( 'name' )); ?>"></a>
-        <?php } else { ?>
+
+        $nextawards_logo_white = get_theme_mod( 'logo_white' );
+
+        ?>
+
+        <?php if ( has_custom_logo() ) { ?>
+
+          <a class="header__logo" href="<?php echo esc_url(home_url()); ?>">
+          
+            <?php if ( $nextawards_logo_white && is_page_template( 'page-templates/menu-trasparent.php'  )) { ?>
+
+                 <img class="header__logo_white-img hide-mobile" src="<?php echo esc_url( $nextawards_logo_white ); ?>" alt="<?php echo esc_url( get_bloginfo( 'name' )); ?>">
+                 <img class="header__logo-img hide-desktop" src="<?php echo esc_url( $nextawards_logo[0] ); ?>" alt="<?php echo esc_url( get_bloginfo( 'name' )); ?>">
+            <?php } else { ?> 
+
+              <img class="header__logo-img" src="<?php echo esc_url( $nextawards_logo[0] ); ?>" alt="<?php echo esc_url( get_bloginfo( 'name' )); ?>">
+           
+            <?php } ?>
+
+          </a>
+
+          <?php } else { ?>
           
           <a class="header__logo" href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('title'); ?> </a>
         <?php } ?>
@@ -69,7 +88,7 @@
             <?php if(esc_attr(get_theme_mod( 'nextawards_search', 'No')) == 'Yes') { ?> 
 
               <div class="quick-search">
-                <form role="search" method="get" action="<?php echo esc_url(home_url());  ?>">
+                <form method="get" action="<?php echo esc_url(home_url());  ?>">
                   <button class="quick-search__icon"> <span class="icon icon-search"></span></button>
                   <input class="quick-search__input" type="text" placeholder="<?php esc_attr_e('Search...', 'nextawards');?>" name="s">
 
