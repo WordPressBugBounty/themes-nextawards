@@ -51,11 +51,13 @@ No data is saved in the database or transferred.
 
 == Changelog ==
 
-TODO: 
-- check block variation quote and create one for buttons
+== 1.7.0 ==
+- add block variation cover
+- add css cart WooCommerce
+- update some icons
+- add scroll top
 
 == 1.6.9 ==
-
 * eliminate css overflow .wrapper for styky element support
 * add option in customizer to hide search in blog page
 * add typography utility css and decrese size title in blog page
@@ -63,9 +65,7 @@ TODO:
 * add color option to the header scroll element in template trasparent
 
 == 1.6.8 ==
-
 * fix menu aria label on open
-
 
 == 1.6.7 ==
 * fix warnings esc_attr_e
@@ -250,6 +250,10 @@ This theme bundles the following third-party resources:
 
 Ionicons - https://ionic.io/ionicons
 License: Distributed under the terms of the SIL OFL License 1.1 (fonts), MIT License (code), and CC BY 3.0 License (documentation)
+Copyright: https://iconduck.com/designers/craftwork
+
+Basil Icons - https://iconduck.com/sets/basil-icons
+License: Creative Commons Attribution 4.0 International. You can find all our CC BY 4.0 icons right here on Iconduck. These icons can be used for Personal & Commercial purposes.
 Copyright: Ionic, https://ionic.io
 
 Image for theme screenshot, Copyright Bango Renders
