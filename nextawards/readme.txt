@@ -51,6 +51,12 @@ No data is saved in the database or transferred.
 
 == Changelog ==
 
+== 1.7.6 ==
+*fix css button message add to cart and checkout payment box color
+
+== 1.7.5 ==
+*fix css input checkout
+
 == 1.7.4 ==
 * fix css orizontal scroll overflow windows
 * fix registration woocommerce layout 

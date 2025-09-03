@@ -1,7 +1,7 @@
 /*
 Theme Name: 	Nextawards
 Description: 	Responsive Starter WordPress Theme (WooCommerce Ready) with: Minimal Style, 4 Header Style, 2 Menus, 11 Amazing Block Patterns, Trasparent Header Template, WhatsApp Chat, Cool animations, Light and fast, Full Site Editing Template! Inspired by Awards Winning Web Sites. Correct setup and installation in theme folder readme file ;)
-Version:     	1.7.4
+Version:     	1.7.6
 Author:     	Andrea Marchetti
 Site:         http://www.marchettidesign.net
 Text Domain: 	nextawards
@@ -789,6 +789,9 @@ button[type=submit] { margin-top: 10px; padding: 15px 20px; color: #fff; text-tr
   width: auto;
   word-wrap: break-word;
 }
+.woocommerce .woocommerce-message a.button,
+.woocommerce .woocommerce-error a.button,
+.woocommerce .woocommerce-info a.button{color:#fff!important}
 
 .woocommerce .woocommerce-message a.button{background: #4CAF50!important;}
 .woocommerce-message::before{color: #4CAF50;}
@@ -862,6 +865,16 @@ button[type=submit] { margin-top: 10px; padding: 15px 20px; color: #fff; text-tr
 .woocommerce .checkout-button,
 .woocommerce .place-order .button{font-size: 18px;font-weight: bold;}
 
+/* Checkout input */
+.woocommerce form .form-row .input-text, .woocommerce form .form-row select{padding:10px}
+.checkout.woocommerce-checkout .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 20px;
+}
+
+.woocommerce-checkout #payment{
+	background:#ddd;
+}
+
 @media (min-width: 998px){
 	.woocommerce-checkout .checkout.woocommerce-checkout.col2-set, 
   .woocommerce-checkout .col2-set{ width:50%;float:left }
@@ -869,7 +882,7 @@ button[type=submit] { margin-top: 10px; padding: 15px 20px; color: #fff; text-tr
 	.woocommerce-checkout .checkout.woocommerce-checkout #order_review{width:45%; float:right } 
   
   /* Sticky Cart */
-  .woocommerce-page .checkout.woocommerce-checkout #order_review_heading{position: sticky;top:160px}
+  .woocommerce-page .checkout.woocommerce-checkout #order_review_heading{position: sticky;top:160px} 
   .woocommerce-page .checkout.woocommerce-checkout #order_review{position: sticky;top:200px}
   .woocommerce-page .checkout.woocommerce-checkout{float:left; width: 100%;position: relative;}
 	
