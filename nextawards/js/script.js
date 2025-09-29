@@ -77,7 +77,7 @@ fadeElms.forEach(el => observer.observe(el));
 
 /* Animation on Scroll System v2 (INTERSECTION OBSERVER API) */
 (() => {
-  const SELECTOR = '.reveal, .reveal-stagger';
+  const SELECTOR = '.reveal';
 
   if (!('IntersectionObserver' in window)) {
     document.addEventListener('DOMContentLoaded', () => {
@@ -94,7 +94,7 @@ fadeElms.forEach(el => observer.observe(el));
         io.unobserve(el);
       }
     }
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+  }, { rootMargin: '0px 0px -20% 0px', threshold: 0 });
 
   const observeAll = () => {
     document.querySelectorAll(SELECTOR).forEach(el => {
