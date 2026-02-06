@@ -31,6 +31,10 @@ To add fade animation to a element simply add ".fade" css class to the element
 
 To add advanced Scroll Reveal Animations: Use the class .reveal to animate elements when they enter the viewport. The script adds .is-inview automatically on scroll. Variants (combine with .reveal): .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-zoom, .reveal-skew, .reveal-blur, .reveal-clip → masked reveal from bottom - Delay: Use .delay-01 to 0.1 seconds of delay you can add .delay-02, .delay-03 ... until .delay-10 (1 seconds delay).
 
+To hide a element on mobile you can use the class .sma-hide, to hide on desktop .desk-hide, to hide on all devices .all-hide
+
+To reverse a columns on mobile (for media text layout perfect on mobile) use the class .sma-column-reverse
+
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
@@ -50,8 +54,43 @@ No data is saved in the database or transferred.
 * add option Body text color: Black / White (add in color section)
 * add option to 2,3,4 column footer
 
-
 == Changelog ==
+
+== 1.8.7 ==
+* fix color header scroll in fix width trasparent template
+
+== 1.8.6 ==
+* fix wide template big screen
+
+== 1.8.5 ==
+* add template wide fix transparent
+
+== 1.8.4 ==
+* fix menu logo white, fix reveal clip
+
+== 1.8.3 ==
+* fix menu color in trasparent template
+
+== 1.8.2 ==
+* Add menu current item options style
+* fix spacer in align-wide-template
+
+== 1.8.1 ==
+* align wide fix template system
+* padding responsive system
+* gradient options
+* shadow options
+* utilites classes hide and reverse-column
+* fix button outline css
+* add underline line in menu
+
+== 1.8.0 ==
+* add animation duration system
+* add more professional reveal-clip animations
+* fix additiona filed checkout css
+* fix css sticky checkout
+* fix css button woocommerce
+* fix css register in woocommerce
 
 == 1.7.9 ==
 

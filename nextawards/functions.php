@@ -267,8 +267,9 @@ function nextawards_customize_css(){
 	echo ':root { --site-bg: #'.$nextawards_bg_color.'; --link-color: '.esc_attr(get_theme_mod( 'nextawards_link_color', '#048ea0')).'; --link-color-hover: '.esc_attr(get_theme_mod( 'nextawards_link_color_hover', '#105862')).'; }';
 	echo 'body, :root :where(body), p, ul, li, ol{font-family: '.$nextawards_google_font_body.'}';
 	echo 'h1,h2,h3,h4,h5,h6{font-family: '.$nextawards_google_font.'}';
-	echo '.wp-block-button__link, input[type=submit].wpcf7-submit{background-color: '.esc_attr(get_theme_mod( 'nextawards_link_color', '#048ea0')).'}';
+	echo '.wp-block-button__link:not(.is-style-outline .wp-block-button__link):not(.is-style-secondary-button .wp-block-button__link), input[type=submit].wpcf7-submit{background-color: '.esc_attr(get_theme_mod( 'nextawards_link_color', '#048ea0')).'}';
     echo '.wp-block-button__link:hover:not(.is-style-outline .wp-block-button__link):not(.is-style-secondary-button .wp-block-button__link),.wp-block-button__link:focus:not(.is-style-outline .wp-block-button__link):focus:not(.is-style-secondary-button .wp-block-button__link), input[type=submit].wpcf7-submit:hover, input[type=submit].wpcf7-submit:focus{background-color: '.esc_attr(get_theme_mod( 'nextawards_link_color_hover', '#105862')).'}';
+	echo '.is-style-outline .wp-block-button__link{color: '. esc_attr(get_theme_mod( 'nextawards_border_color', '#222222')).'}';
 	echo '.is-style-outline .wp-block-button__link:hover{color: '. esc_attr(get_theme_mod( 'nextawards_link_color_hover', '#105862')).'}';
 	echo '.header {background-color: '.esc_attr(get_theme_mod( 'nextawards_header_color', '#E4E4E4')).'}';
 	echo '.header__content, .header__menu li {border-color: '.esc_attr(get_theme_mod( 'nextawards_border_color', '#222222')).'}';
@@ -308,7 +309,26 @@ function nextawards_customize_css(){
 		echo '#blog-search{display:none}';
 	}
 
-	echo '@media (min-width: 1190px) {.page-template-menu-trasparent.scroll-down .header{background: '.esc_attr(get_theme_mod( 'nextawards_header_scroll_color', '#222222')).'!important}}';
+	if(esc_attr(get_theme_mod( 'nextawards_header_wide_fix', 'no')) == "Yes"){
+		echo '.header__content, .footer-container .grid { max-width: 1300px;}';
+		echo '.footer-container{ margin: 0 auto; padding: 0;max-width: 1300px;}';
+
+		echo '@media (min-width: 1450px){ .header__content,.footer-container, .footer-container .grid {max-width: 1500px;} } ';
+
+	}
+
+	if(esc_attr(get_theme_mod( 'nextawards_current_menu_item_style', 'no')) == "Line"){
+		echo '@media (min-width: 1190px) { .menu > li.current-menu-item > a::before{ content: ""; position: absolute; left: 16px; right: 16px; bottom: 10px; height: 2px; background: #000; opacity:0.2;}}';
+	} else if(esc_attr(get_theme_mod( 'nextawards_current_menu_item_style', 'no')) == "Pill"){
+		echo '@media (min-width: 1190px) { .menu > li.current-menu-item > a::before{ content: ""; position: absolute; left: 0px; right: 0px; bottom: 14px; height: 25px; background: #000; opacity:0.15;border-radius:30px;}}';
+	} else if(esc_attr(get_theme_mod( 'nextawards_current_menu_item_style', 'no')) == "LinkColor"){	
+		echo '.menu li.current-menu-item > a{color: '.esc_attr(get_theme_mod( 'nextawards_link_color', '#048ea0')).' !important}';
+	} else if(esc_attr(get_theme_mod( 'nextawards_current_menu_item_style', 'no')) == "LinkColorHover"){	
+		echo '.menu li.current-menu-item > a{color: '.esc_attr(get_theme_mod( 'nextawards_link_color_hover', '#105862')).' !important}';
+	}
+
+
+	echo '@media (min-width: 1190px) {.page-template-menu-trasparent.scroll-down .header, .page-template-align-wide-fix-trasparent.scroll-down .header{background: '.esc_attr(get_theme_mod( 'nextawards_header_scroll_color', '#222222')).'!important}}';
 
 	// secondary button
 	echo '.wp-block-button.is-style-secondary-button .wp-block-button__link { background-color: '.esc_attr(get_theme_mod( 'nextawards_secondary_button_color', '#ea5a39')).'; color: '.esc_attr(get_theme_mod( 'nextawards_secondary_button_text_color', '#ffffff')).';}';
@@ -357,6 +377,9 @@ function nextawards_customize_css_iframe_editor() {
 
 			$nextawards_link_color = esc_attr(get_theme_mod( 'nextawards_link_color', '#048ea0'));
 			$nextawards_bg_color = get_background_color();
+
+			$nextawards_border_color = esc_attr(get_theme_mod( 'nextawards_border_color', '#222222'));
+
 			$custom_css = "
 				.editor-styles-wrapper .wp-block-post-title,
 			    .editor-styles-wrapper .wp-block-heading,
@@ -370,7 +393,7 @@ function nextawards_customize_css_iframe_editor() {
 				.editor-styles-wrapper{background: #{$nextawards_bg_color} ;}
 				.edit-post-visual-editor .editor-styles-wrapper .wp-block-button__link:not(.is-style-outline .wp-block-button__link):not(.is-style-secondary-button .wp-block-button__link),
 				body.editor-styles-wrapper .wp-block-button__link:not(.is-style-outline .wp-block-button__link):not(.is-style-secondary-button .wp-block-button__link){background-color: {$nextawards_link_color } }
-
+				body.editor-styles-wrapper .is-style-outline .wp-block-button__link{color: #{$nextawards_border_color}; }
 				";
 			wp_add_inline_style( 'custom-editor-style', $custom_css );
     }
