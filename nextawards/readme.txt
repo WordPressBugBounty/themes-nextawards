@@ -59,6 +59,10 @@ No data is saved in the database or transferred.
 
 == Changelog ==
 
+= 1.9.3 ==
+
+* fix parallax system math calc
+
 = 1.9.2 ==
 
 * fix hide css classes
